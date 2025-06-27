@@ -1,0 +1,4 @@
+name: spigot-ChestUI
+main: com.thesilentnights.ChestUi
+version: 1.0.0
+api-version: 1.20.4
