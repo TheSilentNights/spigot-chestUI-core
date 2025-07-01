@@ -1,9 +1,10 @@
-package com.thesilentnights.components;
+package com.thesilentnights.chestui.components.impl;
 
-import org.bukkit.entity.Player;
+import com.thesilentnights.chestui.components.Button;
+import com.thesilentnights.chestui.components.Function;
 import org.bukkit.inventory.ItemStack;
 
-public class ButtonImpl implements Button{
+public class ButtonImpl implements Button {
     private ItemStack itemStack;
     private int slot;
     private Function function;
@@ -16,7 +17,7 @@ public class ButtonImpl implements Button{
 
     @Override
     public ItemStack getItemStack() {
-        return null;
+        return itemStack;
     }
 
     @Override
@@ -28,13 +29,5 @@ public class ButtonImpl implements Button{
     public Function getFunction() {
         return function;
     }
-
-    @Override
-    public boolean checkPermission(Player clicker) {
-        return false;
-    }
-
-
-
 
 }

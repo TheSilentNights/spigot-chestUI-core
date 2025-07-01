@@ -1,4 +1,4 @@
-package com.thesilentnights.commands;
+package com.thesilentnights.chestui.commands;
 
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.TabCompleter;

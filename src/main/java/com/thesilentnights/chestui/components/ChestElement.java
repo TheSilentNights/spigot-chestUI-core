@@ -1,8 +1,9 @@
-package com.thesilentnights.components;
+package com.thesilentnights.chestui.components;
 
 import org.bukkit.inventory.ItemStack;
 
-public interface ChestItem {
+public interface ChestElement {
     ItemStack getItemStack();
+
     int getSlot();
 }

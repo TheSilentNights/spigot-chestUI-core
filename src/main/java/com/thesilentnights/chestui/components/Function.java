@@ -1,4 +1,4 @@
-package com.thesilentnights.components;
+package com.thesilentnights.chestui.components;
 
 import org.bukkit.entity.Player;
 
