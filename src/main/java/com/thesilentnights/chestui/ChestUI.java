@@ -1,7 +1,7 @@
 package com.thesilentnights.chestui;
 
 import com.thesilentnights.chestui.commands.Debug;
-import com.thesilentnights.chestui.repo.MenuRepo;
+import com.thesilentnights.chestui.events.PlayerClickListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
@@ -20,15 +20,7 @@ public class ChestUI extends JavaPlugin {
     public void onEnable() {
         ChestUI.logger = this.getLogger();
         instance = this;
-        try {
-            MenuRepo.register(
-                    "debug",
-                    InventoryProviderFactory.create(54, 4)
-            );
-        } catch (IllegalArgumentException e) {
-            logger.info("error while loading");
-        }
-        InventoryProviderFactory.create(54, 4);
+        getServer().getPluginManager().registerEvents(new PlayerClickListener(), this);
         Objects.requireNonNull(getCommand("debug")).setExecutor(new Debug());
     }
 }

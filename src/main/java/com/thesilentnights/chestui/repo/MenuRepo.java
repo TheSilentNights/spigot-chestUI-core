@@ -20,4 +20,9 @@ public class MenuRepo {
         return first.orElse(null);
     }
 
+    public static ChestUIHolder getByName(String name)
+    {
+        Optional<ChestUIHolder> first = chestUIHolders.stream().filter(holder -> holder.getViewer().getName().equals(name)).findFirst();
+        return first.orElse(null);
+    }
 }
