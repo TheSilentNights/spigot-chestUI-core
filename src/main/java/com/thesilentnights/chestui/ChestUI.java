@@ -7,17 +7,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class ChestUI extends JavaPlugin {
+public class ChestUI extends JavaPlugin
+{
     public static Logger logger;
     public static ChestUI instance;
 
     @Override
-    public void onDisable() {
+    public void onDisable()
+    {
         super.onDisable();
     }
 
     @Override
-    public void onEnable() {
+    public void onEnable()
+    {
         ChestUI.logger = this.getLogger();
         instance = this;
         getServer().getPluginManager().registerEvents(new PlayerClickListener(), this);

@@ -7,9 +7,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 
-public class PlayerClickListener implements Listener {
+public class PlayerClickListener implements Listener
+{
     @EventHandler
-    public void handleClick(InventoryClickEvent event) {
+    public void handleClick(InventoryClickEvent event)
+    {
         Player player = (Player) event.getWhoClicked();
         ChestUIHolder viewer = MenuRepo.findViewer(player);
         viewer.executeOn(event.getSlot());

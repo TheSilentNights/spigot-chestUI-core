@@ -1,5 +1,6 @@
 package com.thesilentnights.chestui.components;
 
-public interface Button extends ChestElement {
+public interface Button extends ChestElement
+{
     Function getFunction();
 }

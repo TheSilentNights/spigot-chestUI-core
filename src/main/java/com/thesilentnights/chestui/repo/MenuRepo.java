@@ -7,14 +7,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class MenuRepo {
+public class MenuRepo
+{
     static List<ChestUIHolder> chestUIHolders = new ArrayList<>();
 
-    public static void register(ChestUIHolder holder) throws IllegalArgumentException {
+    public static void register(ChestUIHolder holder) throws IllegalArgumentException
+    {
         chestUIHolders.add(holder);
     }
 
-    public static ChestUIHolder findViewer(Player player) {
+    public static ChestUIHolder findViewer(Player player)
+    {
         Optional<ChestUIHolder> first = chestUIHolders.stream().filter(holder -> holder.getViewer().getName().equals(player.getName())).findFirst();
 
         return first.orElse(null);

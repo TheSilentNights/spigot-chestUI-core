@@ -13,28 +13,36 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
 
-public class Debug implements Commands {
+public class Debug implements Commands
+{
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
+    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings)
+    {
         InventoryProviderImpl inventoryProvider = new InventoryProviderImpl(4);
-        inventoryProvider.addButton(new Button() {
+        inventoryProvider.addButton(new Button()
+        {
             @Override
-            public Function getFunction() {
-                return new Function() {
+            public Function getFunction()
+            {
+                return new Function()
+                {
                     @Override
-                    public void execute(Player clicker) {
+                    public void execute(Player clicker)
+                    {
                         clicker.sendMessage("test success");
                     }
                 };
             }
 
             @Override
-            public ItemStack getItemStack() {
+            public ItemStack getItemStack()
+            {
                 return new ItemStack(Material.ACACIA_BUTTON);
             }
 
             @Override
-            public int getSlot() {
+            public int getSlot()
+            {
                 return 1;
             }
         });
@@ -43,7 +51,8 @@ public class Debug implements Commands {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings) {
+    public List<String> onTabComplete(CommandSender commandSender, Command command, String s, String[] strings)
+    {
         return List.of("");
     }
 }
