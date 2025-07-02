@@ -2,6 +2,7 @@ package com.thesilentnights.chestui.commands;
 
 import com.thesilentnights.chestui.components.Button;
 import com.thesilentnights.chestui.components.Function;
+import com.thesilentnights.chestui.repo.MenuRepo;
 import com.thesilentnights.chestui.service.ChestUIHolderImpl;
 import com.thesilentnights.chestui.service.InventoryProviderImpl;
 import com.thesilentnights.chestui.service.UI;
@@ -18,7 +19,7 @@ public class Debug implements Commands
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings)
     {
-        InventoryProviderImpl inventoryProvider = new InventoryProviderImpl(4);
+        InventoryProviderImpl inventoryProvider = new InventoryProviderImpl();
         inventoryProvider.addButton(new Button()
         {
             @Override
@@ -46,7 +47,8 @@ public class Debug implements Commands
                 return 1;
             }
         });
-        UI.openToPlayer(((Player) commandSender), ((Player) commandSender).getDisplayName(), new ChestUIHolderImpl((Player) commandSender, inventoryProvider));
+        MenuRepo.register(new ChestUIHolderImpl((Player) commandSender, inventoryProvider));
+        UI.openToPlayer((Player) commandSender);
         return true;
     }
 

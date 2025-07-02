@@ -8,18 +8,11 @@ import java.util.Map;
 
 public class InventoryProviderImpl implements InventoryProvider
 {
-    private final int permission;
     private final Map<Integer, ChestElement> itemTable = new Hashtable<>();
 
-    public InventoryProviderImpl(int permission)
+    public InventoryProviderImpl()
     {
-        this.permission = permission;
-    }
 
-    @Override
-    public int getPermission()
-    {
-        return permission;
     }
 
     @Override

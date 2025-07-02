@@ -8,8 +8,9 @@ import org.bukkit.inventory.Inventory;
 public class UI
 {
     //初始化inventory并且展示给player
-    public static void openToPlayer(Player player, String name, ChestUIHolder holder)
+    public static void openToPlayer(Player player)
     {
+        ChestUIHolder holder = MenuRepo.findByViewer(player);
         Inventory inventory = Bukkit.createInventory(holder, 54);
 
         holder.getProvider().getElements().forEach((integer, element) ->

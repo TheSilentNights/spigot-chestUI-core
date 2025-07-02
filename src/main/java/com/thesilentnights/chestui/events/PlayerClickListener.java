@@ -13,7 +13,7 @@ public class PlayerClickListener implements Listener
     public void handleClick(InventoryClickEvent event)
     {
         Player player = (Player) event.getWhoClicked();
-        ChestUIHolder viewer = MenuRepo.findViewer(player);
+        ChestUIHolder viewer = MenuRepo.findByViewer(player);
         viewer.executeOn(event.getSlot());
         event.setCancelled(true);
     }

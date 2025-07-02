@@ -11,15 +11,19 @@ public class MenuRepo
 {
     static List<ChestUIHolder> chestUIHolders = new ArrayList<>();
 
-    public static void register(ChestUIHolder holder) throws IllegalArgumentException
+    public static void register(ChestUIHolder holder)
     {
         chestUIHolders.add(holder);
     }
 
-    public static ChestUIHolder findViewer(Player player)
+    public static void unregister(ChestUIHolder holder)
+    {
+        chestUIHolders.remove(holder);
+    }
+
+    public static ChestUIHolder findByViewer(Player player)
     {
         Optional<ChestUIHolder> first = chestUIHolders.stream().filter(holder -> holder.getViewer().getName().equals(player.getName())).findFirst();
-
         return first.orElse(null);
     }
 
